@@ -6,18 +6,16 @@ use warnings;
 # 1 から 1000 まで順に数を数えていって、
 # 3の倍数の場合は「Fizz」、5の倍数は「Buzz」、15の倍数は「Fizz Buzz」と表示するようなプログラムを書く
 
-my $xx = 1;
-
-while ($xx <= 1000) {
-	if ($xx % 15 == 0) {
+for (my $xx = 1; $xx <= 100; $xx++) {
+	if (not $xx % 15) {
 		print "Fizz Buzz\n";
-	} elsif ($xx % 3 == 0) {
+	} elsif (not $xx % 3) {
 		print "Fizz\n";
-	} elsif ($xx % 5 == 0) {
+	} elsif (not $xx % 5) {
 		print "Buzz\n";
 	} else {
 		print "$xx\n";
 	}
-	$xx++;
 }
+
 
