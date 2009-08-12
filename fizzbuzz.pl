@@ -7,15 +7,7 @@ use warnings;
 # 3の倍数の場合は「Fizz」、5の倍数は「Buzz」、15の倍数は「Fizz Buzz」と表示するようなプログラムを書く
 
 for (1..1000) {
-	if (not $_ % 15) {
-		print "Fizz Buzz\n";
-	} elsif (not $_ % 3) {
-		print "Fizz\n";
-	} elsif (not $_ % 5) {
-		print "Buzz\n";
-	} else {
-		print "$_\n";
-	}
+	print ((($_ % 3 ? "":"Fizz").($_ % 5 ? "":"Buzz") or $_)."\n");
 }
 
 
