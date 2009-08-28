@@ -3,11 +3,15 @@ use strict;
 use warnings;
 
 
-# 1 から 1000 まで順に数を数えていって、
-# 3の倍数の場合は「Fizz」、5の倍数は「Buzz」、15の倍数は「Fizz Buzz」と表示するようなプログラムを書く
+# 今日からの○日後が○年○月○日かを表示してくれるプログラムを書く
 
-for (1..1000) {
-	print ((($_ % 3 ? "":"Fizz").($_ % 5 ? "":"Buzz") or $_)."\n");
-}
+my $timestamp = time;
+my ($sec, $min, $hour, $day, $mon, $year, $wday, $yday, $isdst) = localtime $timestamp;
+
+$year += 1900;
+$mon += 1;
+my @week = ('Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat');
+
+print "$year/$mon/$day $week[$wday]\n";
 
 
